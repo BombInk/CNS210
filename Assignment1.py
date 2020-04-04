@@ -20,21 +20,19 @@ def Fib(n, f = None):
 
 
 def main():
-    print("Enter Main")
     # Create argparse
     parser = argparse.ArgumentParser(description="Computes to the nth term of the Fibonacci sequence")
     # Add an argument
     parser.add_argument("num", type=int, help='Enter a number to compute the nth term')
-    parser.add_argument("-o", "--output", action="store_true")
+    parser.add_argument("-o", "--output", type=str, action="store")
     # Assign the argument to a variable
     args = parser.parse_args()
     # Call the fib function and assign the return value to a variable
     result = Fib((args.num))
     print("Calculation finished: ", result)
     if args.output:
-        print("Open file to save")
-        f = open("Fibonacci.txt", "w")
-        print("File is open")
+        print("File saved")
+        f = open(args.output, "a")
         Fib(args.num, f)
         f.close()
 
