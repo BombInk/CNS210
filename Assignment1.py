@@ -27,7 +27,6 @@ def main():
     parser.add_argument("-o", "--output", action="store_true")
     # Assign the argument to a variable
     args = parser.parse_args()
-    print("Args: ", args)
     # Call the fib function and assign the return value to a variable
     result = Fib((args.num))
     print("Calculation finished: ", result)
