@@ -13,6 +13,7 @@ def Fib(n, f = None):
         r = (Fib(n - 1, f) + Fib(n - 2))
     if f != None:
         f.write(str(r) + ' ')
+        f.write('\n')
     return r
 
 
@@ -32,9 +33,10 @@ def main():
     print("Calculation finished: ", result)
     if args.output:
         print("Open file to save")
-        f = open("Fibonacci.txt", "a")
+        f = open("Fibonacci.txt", "w")
         print("File is open")
         Fib(args.num, f)
+        f.close()
 
 if __name__ == "__main__":
     main()
