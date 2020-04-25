@@ -15,4 +15,4 @@ for version in all_versions:
             version_number = str(version.select(".release-number")[0].get_text()).split(" ")[1]
             if "2.7" in version_number:
                     urllib.urlretrieve("https://www.python.org/ftp/python/" + version_number + "/python-" + \
-                        version_number + ".amd64.msi", 'briston_python_version_274.msi')
+                        version_number + ".amd64.msi", 'briston_python_version_' + version_number + '.msi')
